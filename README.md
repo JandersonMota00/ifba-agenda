@@ -27,3 +27,39 @@
 </table>
 
 ## Estrutura do Projeto
+
+```
+IFBA-AGENDA/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── smartagenda/
+│   │   │           ├── command/
+│   │   │           │   ├── Command.java
+│   │   │           │   ├── EnviarEmailCommand.java
+│   │   │           │   └── ...
+│   │   │           ├── observer/
+│   │   │           │   ├── Observer.java
+│   │   │           │   ├── Subject.java
+│   │   │           │   ├── NotificadorObserver.java
+│   │   │           │   ├── LoggerObserver.java
+│   │   │           │   └── ...
+│   │   │           ├── strategy/
+│   │   │           │   ├── ExecutionStrategy.java
+│   │   │           │   ├── ExecucaoImediataStrategy.java
+│   │   │           │   └── ...
+│   │   │           ├── chainofresponsibility/
+│   │   │           │   ├── ConditionalHandler.java
+│   │   │           │   ├── HorarioComercialHandler.java
+│   │   │           │   └── ...
+│   │   │           ├── model/
+│   │   │           │   ├── Task.java
+│   │   │           │   ├── TaskScheduler.java
+│   │   │           │   └── ...
+│   │   │           └── AgendaApplication.java
+│   └── resources/
+├── .gitignore
+├── README.md
+└── pom.xml
+```
