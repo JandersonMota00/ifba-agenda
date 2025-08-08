@@ -7,7 +7,8 @@
 - **Semestre:** 5
 - **Ano:** 2025.1
 
-## Construção de Agenda
+## SmartAgenda: Aplicação de Padrões de Projeto
+Este projeto é uma implementação do sistema "SmartAgenda" que visa demonstrar o uso prático de padrões de projeto comportamentais, como o Observer, Command e Strategy.
 
 [A4 - SAJ-ADS08 - Aplicação de Padrões de Projeto com Ênfase em Padrões Comportamentais.pdf](https://github.com/user-attachments/files/21642468/A4.-.SAJ-ADS08.-.Aplicacao.de.Padroes.de.Projeto.com.Enfase.em.Padroes.Comportamentais.pdf)
 
@@ -26,6 +27,27 @@
   </tr>
 </table>
 
+## Padrões de Projeto Utilizados
+
+### Padrão Observer:
+
+**Objetivo:** Permitir que vários objetos sejam notificados automaticamente sobre mudanças de estado em um objeto central.
+
+**Implementação:** A classe _`TaskScheduler`_ atua como o Subject. Ela mantém uma lista de _`Observers`_ (como _`LoggerObserver`_ e _`NotificadorObserver`_). Quando uma nova tarefa é agendada, o 
+_`TaskScheduler`_ notifica todos os observadores, que reagem de forma independente.
+
+### Padrão Command:
+
+**Objetivo:** Encapsular uma solicitação como um objeto, permitindo parametrizar clientes com diferentes requisições, enfileirar ou registrar requisições, e suportar operações desfazíveis.
+
+**Implementação:** Cada ação programável, como "enviar e-mail", é encapsulada em uma classe que implementa a interface _`Command`_. A classe _`EnviarEmailCommand`_ é um exemplo que representa a ação de enviar um e-mail. Isso torna o sistema flexível, pois novas ações podem ser adicionadas sem modificar a lógica principal.
+
+### Padrão Strategy:
+
+**Objetivo:** Definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis, permitindo que o algoritmo varie independentemente do cliente que o utiliza.
+
+**Implementação:** A interface _`ExecutionStrategy`_ define o método _`execute()`_. As classes _`ExecucaoImediataStrategy`_ e outras (que podem ser adicionadas, como _`ExecucaoAtrasadaStrategy`_) implementam essa interface para definir como uma tarefa será executada. A classe _`TaskScheduler`_ utiliza a estratégia escolhida para executar o _`Command`_ da tarefa, desacoplando a lógica de agendamento da lógica de execução.
+
 ## Estrutura do Projeto
 
 ```
@@ -37,26 +59,26 @@ IFBA-AGENDA/
 │   │   │       └── smartagenda/
 │   │   │           ├── command/
 │   │   │           │   ├── Command.java
-│   │   │           │   ├── EnviarEmailCommand.java
-│   │   │           │   └── ...
+│   │   │           │   └── EnviarEmailCommand.java
+│   │   │           │   
 │   │   │           ├── observer/
 │   │   │           │   ├── Observer.java
 │   │   │           │   ├── Subject.java
 │   │   │           │   ├── NotificadorObserver.java
-│   │   │           │   ├── LoggerObserver.java
-│   │   │           │   └── ...
+│   │   │           │   └── LoggerObserver.java
+│   │   │           │   
 │   │   │           ├── strategy/
 │   │   │           │   ├── ExecutionStrategy.java
-│   │   │           │   ├── ExecucaoImediataStrategy.java
-│   │   │           │   └── ...
+│   │   │           │   └── ExecucaoImediataStrategy.java
+│   │   │           │   
 │   │   │           ├── chainofresponsibility/
 │   │   │           │   ├── ConditionalHandler.java
-│   │   │           │   ├── HorarioComercialHandler.java
-│   │   │           │   └── ...
+│   │   │           │   └── HorarioComercialHandler.java
+│   │   │           │   
 │   │   │           ├── model/
 │   │   │           │   ├── Task.java
-│   │   │           │   ├── TaskScheduler.java
-│   │   │           │   └── ...
+│   │   │           │   └── TaskScheduler.java
+│   │   │           │   
 │   │   │           └── AgendaApplication.java
 │   └── resources/
 ├── .gitignore
