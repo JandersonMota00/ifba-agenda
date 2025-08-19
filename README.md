@@ -2,7 +2,7 @@
 - **Instituição:** IFBA - Instituto Federal da Bahia
 - **Curso:** Análise e Desenvolvimento de Sistemas (ADS)
 - **Disciplina:** Padrões de Projetos
-- **Projeto:** Aplicação de Pradrôes de Projeto com Ênfase em Padrôes Comportamentais
+- **Projeto:** Aplicação de Pradrões de Projeto com Ênfase em Padrôes Comportamentais
 - **Professor:** Felipe de Souza Silva
 - **Semestre:** 5
 - **Ano:** 2025.1
